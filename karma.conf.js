@@ -15,7 +15,7 @@ module.exports = function(config) {
     browsers: [argv.browsers || 'Chrome'],
     files: [
       'node_modules/angular/angular.js',
-      'node_modules/angular-local-storage/dist/angular-local-storage.js',
+      'bower_components/angular-local-storage/dist/angular-local-storage.js',
       'node_modules/query-string/query-string.js',
       'node_modules/lodash/lodash.js',
       'node_modules/angular-mocks/angular-mocks.js',

@@ -32,7 +32,7 @@ describe('OAuthTokenProvider', function() {
 
   describe('$get()', function() {
     beforeEach(function() {
-      angular.module('angular-oauth2.test', ['angular-local-storage.mock'])
+      angular.module('angular-oauth2.test', ['angular-local-storage'])
         .config(function(OAuthProvider) {
           OAuthProvider.configure({
             baseUrl: 'https://api.website.com',

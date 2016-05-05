@@ -3,7 +3,13 @@
 AngularJS OAuth2 authentication module written in ES6.
 
 ---
+###Getting this error.. any idea, i think the switch could be successful
+   [$injector:modulerr] Failed to instantiate module angular-oauth2 due to:
+    Error: [$injector:modulerr] Failed to instantiate module undefined due to:
+    Error: [ng:areq] Argument 'module' is not a function, got undefined
+    http://errors.angularjs.org/1.5.5/ng/areq?p0=module&p1=not%20a%20function%2C%20got%20undefined
 
+---
 ## Installation
 
 Choose your preferred method:
