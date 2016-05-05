@@ -1,7 +1,37 @@
-In this folk, I have decided to use local storage instead on ngCookies... bad idea?.. hope not.
+# angular-oauth2 [![Build Status](https://travis-ci.org/ewkonzo/angular-oauth2.svg)](https://travis-ci.org/ewkonzo/angular-oauth2)
 
+AngularJS OAuth2 authentication module written in ES6.
 
-###### 1. Configure `OAuth` (required) and `OAuthToken` (optional):
+---
+
+## Installation
+
+Choose your preferred method:
+
+* Bower: `bower install angular-oauth2`
+* NPM: `npm install --save angular-oauth2`
+* Download: [angular-oauth2](https://raw.github.com/seegno/angular-oauth2/master/dist/angular-oauth2.min.js)
+
+## Usage
+
+###### 1. Download `angular-oauth2` dependencies.
+
+* [angular](https://github.com/angular/bower-angular)
+* [angular-local-storage](https://github.com/grevory/angular-local-storage)
+* [query-string](https://github.com/sindresorhus/query-string)
+
+If you're using `bower` they will be automatically downloaded upon installing this library.
+
+###### 2. Include `angular-oauth2` and dependencies.
+
+```html
+<script src="<VENDOR_FOLDER>/angular/angular.min.js"></script>
+<script src="<VENDOR_FOLDER>/angular-local-storage/angular-local-storage.min.js"></script>
+<script src="<VENDOR_FOLDER>/query-string/query-string.js"></script>
+<script src="<VENDOR_FOLDER>/angular-oauth2/dist/angular-oauth2.min.js"></script>
+```
+
+###### 3. Configure `OAuth` (required) and `OAuthToken` (optional):
 
 ```js
 angular.module('myApp', ['angular-oauth2'])
@@ -14,7 +44,7 @@ angular.module('myApp', ['angular-oauth2'])
   }]);
 ```
 
-###### 2. Catch `OAuth` errors and do something with them (optional):
+###### 4. Catch `OAuth` errors and do something with them (optional):
 
 ```js
 angular.module('myApp', ['angular-oauth2'])
@@ -71,7 +101,7 @@ Get an access token:
 
 ```js
 /**
- * Retrieves the `access_token` and stores the `response.data` on cookies
+ * Retrieves the `access_token` and stores the `response.data` on localstorage
  * using the `OAuthToken`.
  *
  * @param {object} user - Object with `username` and `password` properties.
@@ -86,7 +116,7 @@ Refresh access token:
 
 ```js
 /**
- * Retrieves the `refresh_token` and stores the `response.data` on cookies
+ * Retrieves the `refresh_token` and stores the `response.data` on localstorage
  * using the `OAuthToken`.
  *
  * @return {promise} A response promise.
@@ -99,7 +129,7 @@ Revoke access token:
 
 ```js
 /**
- * Revokes the `token` and removes the stored `token` from cookies
+ * Revokes the `token` and removes the stored `token` from localstorage
  * using the `OAuthToken`.
  *
  * @return {promise} A response promise.
@@ -117,7 +147,7 @@ OAuth.revokeToken()
 
 #### OAuthTokenProvider
 
-`OAuthTokenProvider` uses [angular-cookies](https://github.com/angular/bower-angular-cookies) to store the cookies. Check the [available options](https://code.angularjs.org/1.4.0/docs/api/LocalStorageModule/service/$cookies).
+`OAuthTokenProvider` uses [angular-local-storage](https://github.com/angular/bower-angular-local-storage) to store the localstorage. Check the [available options](https://code.angularjs.org/1.4.0/docs/api/nglocalstorage/service/$localstorage).
 
 Configuration defaults:
 
