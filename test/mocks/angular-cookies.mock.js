@@ -3,8 +3,8 @@
  * Angular cookies mock.
  */
 
-angular.module('angular-cookies.mock', [])
-  .provider('$cookies', function() {
+angular.module('angular-local-storage.mock', [])
+  .provider('localStorageService', function() {
     this.$get = function() {
       var cookieStore = {};
 

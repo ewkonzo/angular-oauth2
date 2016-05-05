@@ -29,9 +29,9 @@ var config = {
     template: `
       (function(root, factory) {
         if (typeof define === 'function' && define.amd) {
-          define([ "angular", "angular-cookies", "query-string" ], factory);
+          define([ "angular", "angular-local-storage", "query-string" ], factory);
         } else if (typeof exports === 'object') {
-          module.exports = factory(require("angular"), require("angular-cookies"), require("query-string"));
+          module.exports = factory(require("angular"), require("angular-local-storage"), require("query-string"));
         } else {
           root.<%= namespace %> = factory(root.angular, 'LocalStorageModule', root.queryString);
         }

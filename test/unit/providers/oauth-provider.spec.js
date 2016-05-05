@@ -124,7 +124,7 @@ describe('OAuthProvider', function() {
 
   describe('$get()', function() {
     beforeEach(function() {
-      angular.module('angular-oauth2.test', ['angular-cookies.mock'])
+      angular.module('angular-oauth2.test', ['angular-local-storage.mock'])
         .config(function(OAuthProvider) {
           OAuthProvider.configure(defaults);
         });

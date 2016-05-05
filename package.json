@@ -1,16 +1,17 @@
 {
   "name": "angular-oauth2",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Angular OAuth2",
   "main": "./dist/angular-oauth2.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/seegno/angular-oauth2.git"
+    "url": "https://github.com/ewkonzo/angular-oauth2.git"
   },
   "keywords": [
     "AngularJS",
     "Authentication",
-    "OAuth2"
+    "OAuth2",
+    "localStorage"
   ],
   "author": {
     "name": "Seegno",
@@ -18,9 +19,9 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/seegno/angular-oauth2/issues"
+    "url": "https://github.com/ewkonzo/angular-oauth2/issues"
   },
-  "homepage": "https://github.com/seegno/angular-oauth2",
+  "homepage": "https://github.com/ewkonzo/angular-oauth2",
   "dependencies": {
     "angular": "^1.5.5",
     "angular-local-storage": "latest",

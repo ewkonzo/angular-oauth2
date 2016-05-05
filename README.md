@@ -10,7 +10,7 @@ Choose your preferred method:
 
 * Bower: `bower install angular-oauth2`
 * NPM: `npm install --save angular-oauth2`
-* Download: [angular-oauth2](https://raw.github.com/seegno/angular-oauth2/master/dist/angular-oauth2.min.js)
+* Download: [angular-oauth2](https://raw.github.com/ewkonzo/angular-oauth2/master/dist/angular-oauth2.min.js)
 
 ## Usage
 
@@ -163,24 +163,24 @@ OAuthTokenProvider.configure({
 #### OAuthToken
 
 If you want to manage the `token` yourself you can use `OAuthToken` service.
-Please check the [OAuthToken](https://github.com/seegno/angular-oauth2/blob/master/src/providers/oauth-token-provider.js#L45) source code to see all the available methods.
+Please check the [OAuthToken](https://github.com/ewkonzo/angular-oauth2/blob/master/src/providers/oauth-token-provider.js#L45) source code to see all the available methods.
 
 ## Contributing & Development
 
 #### Contribute
 
-Found a bug or want to suggest something? Take a look first on the current and closed [issues](https://github.com/seegno/angular-oauth2/issues). If it is something new, please [submit an issue](https://github.com/seegno/angular-oauth2/issues/new).
+Found a bug or want to suggest something? Take a look first on the current and closed [issues](https://github.com/ewkonzo/angular-oauth2/issues). If it is something new, please [submit an issue](https://github.com/ewkonzo/angular-oauth2/issues/new).
 
 #### Develop
 
 It will be awesome if you can help us evolve `angular-oauth2`. Want to help?
 
-1. [Fork it](https://github.com/seegno/angular-oauth2).
+1. [Fork it](https://github.com/ewkonzo/angular-oauth2).
 2. `npm install`.
 3. Do your magic.
 4. Run the tests: `gulp test`.
 5. Build: `gulp build`
-6. Create a [Pull Request](https://github.com/seegno/angular-oauth2/compare).
+6. Create a [Pull Request](https://github.com/ewkonzo/angular-oauth2/compare).
 
 *The source files are written in ES6.*
 

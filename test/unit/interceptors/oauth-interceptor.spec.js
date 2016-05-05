@@ -5,7 +5,7 @@
 
 describe('oauthInterceptor', function() {
   beforeEach(function() {
-    angular.mock.module('angular-oauth2', 'angular-cookies.mock');
+    angular.mock.module('angular-oauth2', 'angular-local-storage.mock');
   });
 
   afterEach(inject(function(OAuthToken) {
