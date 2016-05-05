@@ -10,10 +10,10 @@
     } else if (typeof exports === "object") {
         module.exports = factory(require("angular"), require("angular-cookies"), require("query-string"));
     } else {
-        root.angularOAuth2 = factory(root.angular, "ngCookies", root.queryString);
+        root.angularOAuth2 = factory(root.angular, "LocalStorageModule", root.queryString);
     }
-})(this, function(angular, ngCookies, queryString) {
-    var ngModule = angular.module("angular-oauth2", [ ngCookies ]).config(oauthConfig).factory("oauthInterceptor", oauthInterceptor).provider("OAuth", OAuthProvider).provider("OAuthToken", OAuthTokenProvider);
+})(this, function(angular, LocalStorageModule, queryString) {
+    var ngModule = angular.module("angular-oauth2", [ LocalStorageModule ]).config(oauthConfig).factory("oauthInterceptor", oauthInterceptor).provider("OAuth", OAuthProvider).provider("OAuthToken", OAuthTokenProvider);
     function oauthConfig($httpProvider) {
         $httpProvider.interceptors.push("oauthInterceptor");
     }
@@ -218,7 +218,7 @@
             angular.extend(config, params);
             return config;
         };
-        this.$get = function($cookies) {
+        this.$get = function(localStorageService) {
             var OAuthToken = function() {
                 function OAuthToken() {
                     _classCallCheck(this, OAuthToken);
@@ -226,12 +226,12 @@
                 _createClass(OAuthToken, [ {
                     key: "setToken",
                     value: function setToken(data) {
-                        return $cookies.putObject(config.name, data, config.options);
+                        return localStorageService.set(config.name, data, config.options);
                     }
                 }, {
                     key: "getToken",
                     value: function getToken() {
-                        return $cookies.getObject(config.name);
+                        return localStorageService.get(config.name);
                     }
                 }, {
                     key: "getAccessToken",
@@ -259,14 +259,14 @@
                 }, {
                     key: "removeToken",
                     value: function removeToken() {
-                        return $cookies.remove(config.name, config.options);
+                        return localStorageService.remove(config.name);
                     }
                 } ]);
                 return OAuthToken;
             }();
             return new OAuthToken();
         };
-        this.$get.$inject = [ "$cookies" ];
+        this.$get.$inject = [ "localStorageService" ];
     }
     return ngModule;
 });

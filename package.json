@@ -22,8 +22,8 @@
   },
   "homepage": "https://github.com/seegno/angular-oauth2",
   "dependencies": {
-    "angular": "^1.4.0",
-    "angular-cookies": "^1.4.0",
+    "angular": "^1.5.5",
+    "angular-local-storage": "latest",
     "query-string": "^1.0.0"
   },
   "devDependencies": {

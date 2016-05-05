@@ -33,9 +33,9 @@ var config = {
         } else if (typeof exports === 'object') {
           module.exports = factory(require("angular"), require("angular-cookies"), require("query-string"));
         } else {
-          root.<%= namespace %> = factory(root.angular, 'ngCookies', root.queryString);
+          root.<%= namespace %> = factory(root.angular, 'LocalStorageModule', root.queryString);
         }
-      }(this, function(angular, ngCookies, queryString) {
+      }(this, function(angular, LocalStorageModule, queryString) {
         <% if (exports) { %>
           <%= contents %>
           return <%= exports %>;

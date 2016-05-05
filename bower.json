@@ -23,8 +23,8 @@
     "test"
   ],
   "dependencies": {
-    "angular": "^1.4.0",
-    "angular-cookies": "^1.4.0",
+    "angular": "^1.5.5",
+    "angular-local-storage": "^0.2.7",
     "query-string": "^1.0.0"
   }
 }

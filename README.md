@@ -1,37 +1,7 @@
-# angular-oauth2 [![Build Status](https://travis-ci.org/seegno/angular-oauth2.svg)](https://travis-ci.org/seegno/angular-oauth2)
+In this folk, I have decided to use local storage instead on ngCookies... bad idea?.. hope not.
 
-AngularJS OAuth2 authentication module written in ES6.
 
----
-
-## Installation
-
-Choose your preferred method:
-
-* Bower: `bower install angular-oauth2`
-* NPM: `npm install --save angular-oauth2`
-* Download: [angular-oauth2](https://raw.github.com/seegno/angular-oauth2/master/dist/angular-oauth2.min.js)
-
-## Usage
-
-###### 1. Download `angular-oauth2` dependencies.
-
-* [angular](https://github.com/angular/bower-angular)
-* [angular-cookies](https://github.com/angular/bower-angular-cookies)
-* [query-string](https://github.com/sindresorhus/query-string)
-
-If you're using `bower` they will be automatically downloaded upon installing this library.
-
-###### 2. Include `angular-oauth2` and dependencies.
-
-```html
-<script src="<VENDOR_FOLDER>/angular/angular.min.js"></script>
-<script src="<VENDOR_FOLDER>/angular-cookies/angular-cookies.min.js"></script>
-<script src="<VENDOR_FOLDER>/query-string/query-string.js"></script>
-<script src="<VENDOR_FOLDER>/angular-oauth2/dist/angular-oauth2.min.js"></script>
-```
-
-###### 3. Configure `OAuth` (required) and `OAuthToken` (optional):
+###### 1. Configure `OAuth` (required) and `OAuthToken` (optional):
 
 ```js
 angular.module('myApp', ['angular-oauth2'])
@@ -44,7 +14,7 @@ angular.module('myApp', ['angular-oauth2'])
   }]);
 ```
 
-###### 4. Catch `OAuth` errors and do something with them (optional):
+###### 2. Catch `OAuth` errors and do something with them (optional):
 
 ```js
 angular.module('myApp', ['angular-oauth2'])
@@ -147,7 +117,7 @@ OAuth.revokeToken()
 
 #### OAuthTokenProvider
 
-`OAuthTokenProvider` uses [angular-cookies](https://github.com/angular/bower-angular-cookies) to store the cookies. Check the [available options](https://code.angularjs.org/1.4.0/docs/api/ngCookies/service/$cookies).
+`OAuthTokenProvider` uses [angular-cookies](https://github.com/angular/bower-angular-cookies) to store the cookies. Check the [available options](https://code.angularjs.org/1.4.0/docs/api/LocalStorageModule/service/$cookies).
 
 Configuration defaults:
 
