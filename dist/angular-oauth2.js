@@ -1,19 +1,19 @@
 /**
  * angular-oauth2 - Angular OAuth2
- * @version v0.0.1
+ * @version v0.0.2
  * @link https://github.com/ewkonzo/angular-oauth2
  * @license MIT
  */
 (function(root, factory) {
     if (typeof define === "function" && define.amd) {
-        define([ "angular", "angular-local-storage", "query-string" ], factory);
+        define([ "angular", "angular-cookies", "query-string" ], factory);
     } else if (typeof exports === "object") {
-        module.exports = factory(require("angular"), require("angular-local-storage"), require("query-string"));
+        module.exports = factory(require("angular"), require("angular-cookies"), require("query-string"));
     } else {
-        root.angularOAuth2 = factory(root.angular, "LocalStorageModule", root.queryString);
+        root.angularOAuth2 = factory(root.angular, "localStorageModule", root.queryString);
     }
-})(this, function(angular, LocalStorageModule, queryString) {
-    var ngModule = angular.module("angular-oauth2", [ LocalStorageModule ]).config(oauthConfig).factory("oauthInterceptor", oauthInterceptor).provider("OAuth", OAuthProvider).provider("OAuthToken", OAuthTokenProvider);
+})(this, function(angular, localStorageModule, queryString) {
+    var ngModule = angular.module("angular-oauth2", [ localStorageModule ]).config(oauthConfig).factory("oauthInterceptor", oauthInterceptor).provider("OAuth", OAuthProvider).provider("OAuthToken", OAuthTokenProvider);
     function oauthConfig($httpProvider) {
         $httpProvider.interceptors.push("oauthInterceptor");
     }
@@ -259,7 +259,7 @@
                 }, {
                     key: "removeToken",
                     value: function removeToken() {
-                        return localStorageService.remove(config.name);
+                        return localStorageService.remove(config.name, config.options);
                     }
                 } ]);
                 return OAuthToken;

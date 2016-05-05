@@ -99,7 +99,7 @@ function OAuthTokenProvider() {
        */
 
       removeToken() {
-        return localStorageService.remove(config.name);
+        return localStorageService.remove(config.name, config.options);
       }
     }
 
